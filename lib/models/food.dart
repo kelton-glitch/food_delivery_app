@@ -4,7 +4,7 @@ class Food {
   final String imagePath;
   final double price;
   final FoodCategory category;
-  List<Addon> availableAddons; 
+  List<Addon> availableAddons;
 
   Food(
       {required this.name,
@@ -17,12 +17,20 @@ class Food {
 
 // food categories
 
-enum FoodCategory { burgers, salads, sides, desserts, drinks }
+enum FoodCategory {
+  burgers,
+  salads,
+  sides,
+  desserts,
+  drinks
+  }
 
 // food addons
 class Addon {
   String name;
   double price;
 
-  Addon({required this.name, required this.price});
+  Addon({
+    required this.name,
+    required this.price});
 }

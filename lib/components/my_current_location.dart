@@ -19,7 +19,7 @@ class MyCurrentLocation extends StatelessWidget {
           ),
 
           // save button
-           MaterialButton(
+          MaterialButton(
             onPressed: () => Navigator.pop(context),
             child: const Text('Save'),
           ),
@@ -53,7 +53,7 @@ class MyCurrentLocation extends StatelessWidget {
                 ),
 
                 //drop down menu
-                Icon(Icons.keyboard_arrow_down_rounded),
+                const Icon(Icons.keyboard_arrow_down_rounded),
               ],
             ),
           )
