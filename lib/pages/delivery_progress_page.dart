@@ -12,7 +12,7 @@ class _DeliveryProgressPageState extends State<DeliveryProgressPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Delivery in progress ..."),
+        title: const Text("Delivery in progress ..."),
       ),
     );
   }
