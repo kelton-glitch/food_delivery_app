@@ -10,7 +10,7 @@ class CartPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<Restaurant>(
+    return Consumer<RestaurantProvider>(
       builder: (context, restaurant, child) {
         // cart
         final userCart = restaurant.cart;
@@ -28,8 +28,7 @@ class CartPage extends StatelessWidget {
                   showDialog(
                     context: context,
                     builder: (context) => AlertDialog(
-                      title: const Text(
-                          "Are you sure you want to clear the cart?"),
+                      title: const Text("Are you sure you want to clear the cart?"),
                       actions: [
                         //cancel button
                         TextButton(

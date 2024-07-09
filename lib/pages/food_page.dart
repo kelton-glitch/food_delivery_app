@@ -35,7 +35,7 @@ class _FoodPageState extends State<FoodPage> {
       }
     }
 
-    context.read<Restaurant>().addToCart(food, currentlySeletedAddons);
+    context.read<RestaurantProvider>().addToCart(food, currentlySeletedAddons);
   }
 
   @override
@@ -66,9 +66,7 @@ class _FoodPageState extends State<FoodPage> {
                       //food price
                       Text(
                         '\$ ${widget.food.price}',
-                        style: TextStyle(
-                            fontSize: 16,
-                            color: Theme.of(context).colorScheme.primary),
+                        style: TextStyle(fontSize: 16, color: Theme.of(context).colorScheme.primary),
                       ),
 
                       const SizedBox(height: 10),
@@ -96,8 +94,7 @@ class _FoodPageState extends State<FoodPage> {
 
                       Container(
                         decoration: BoxDecoration(
-                          border: Border.all(
-                              color: Theme.of(context).colorScheme.tertiary),
+                          border: Border.all(color: Theme.of(context).colorScheme.tertiary),
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         child: ListView.builder(
