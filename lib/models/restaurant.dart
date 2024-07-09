@@ -3,258 +3,108 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery_app/models/cart_item.dart';
 import 'package:food_delivery_app/models/food.dart';
 
-class Restaurant extends ChangeNotifier {
+class RestaurantProvider extends ChangeNotifier {
   //list of food menu
   final List<Food> _menu = [
     //burgers
-    Food(
-        name: "Cheese Burger",
-        description: "A cheesy meat burger",
-        imagePath: "lib/images/burgers/cheeseburger.jpg",
-        price: 0.99,
-        category: FoodCategory.burgers,
-        availableAddons: [
-          Addon(name: "Extra cheese", price: 0.99),
-          Addon(name: "Bacon", price: 1.99),
-          Addon(name: "Avocado", price: 2.99),
-        ]),
-    Food(
-        name: "Aloha Burger",
-        description: "A soft meat burger with pineapple and cheese",
-        imagePath: "lib/images/burgers/aloha_burger.jpg",
-        price: 0.99,
-        category: FoodCategory.burgers,
-        availableAddons: [
-          Addon(name: "Extra cheese", price: 0.99),
-          Addon(name: "Bacon", price: 1.99),
-          Addon(name: "Fries", price: 2.99),
-        ]),
-    Food(
-        name: "BBQ Burger",
-        description: "A freshly made burger from the grill with some BBQ sauce",
-        imagePath: "lib/images/burgers/bbq_burger.jpg",
-        price: 0.99,
-        category: FoodCategory.burgers,
-        availableAddons: [
-          Addon(name: "Bacon", price: 0.99),
-          Addon(name: "Hot Dog", price: 1.99),
-          Addon(name: "Meat", price: 2.99),
-        ]),
-    Food(
-        name: "Bluemoon Burger",
-        description: "A burger made with blue cheese",
-        imagePath: "lib/images/burgers/bluemoon_burger.jpg",
-        price: 0.99,
-        category: FoodCategory.burgers,
-        availableAddons: [
-          Addon(name: "Extra cheese", price: 0.99),
-          Addon(name: "Bacon", price: 1.99),
-          Addon(name: "Meat", price: 2.99),
-        ]),
-    Food(
-        name: "Vegan Burger",
-        description: "A vegan burger with fresh vegetables",
-        imagePath: "lib/images/burgers/vegge_burger.jpg",
-        price: 0.99,
-        category: FoodCategory.burgers,
-        availableAddons: [
-          Addon(name: "Extra cheese", price: 0.99),
-          Addon(name: "Salad", price: 1.99),
-          Addon(name: "Avocado", price: 2.99),
-        ]),
+    Food(name: "Cheese Burger", description: "A cheesy meat burger", imagePath: "lib/images/burgers/cheeseburger.jpg", price: 0.99, category: FoodCategory.burgers, availableAddons: [
+      Addon(name: "Extra cheese", price: 0.99),
+      Addon(name: "Bacon", price: 1.99),
+      Addon(name: "Avocado", price: 2.99),
+    ]),
+    Food(name: "Aloha Burger", description: "A soft meat burger with pineapple and cheese", imagePath: "lib/images/burgers/aloha_burger.jpg", price: 0.99, category: FoodCategory.burgers, availableAddons: [
+      Addon(name: "Extra cheese", price: 0.99),
+      Addon(name: "Bacon", price: 1.99),
+      Addon(name: "Fries", price: 2.99),
+    ]),
+    Food(name: "BBQ Burger", description: "A freshly made burger from the grill with some BBQ sauce", imagePath: "lib/images/burgers/bbq_burger.jpg", price: 0.99, category: FoodCategory.burgers, availableAddons: [
+      Addon(name: "Bacon", price: 0.99),
+      Addon(name: "Hot Dog", price: 1.99),
+      Addon(name: "Meat", price: 2.99),
+    ]),
+    Food(name: "Bluemoon Burger", description: "A burger made with blue cheese", imagePath: "lib/images/burgers/bluemoon_burger.jpg", price: 0.99, category: FoodCategory.burgers, availableAddons: [
+      Addon(name: "Extra cheese", price: 0.99),
+      Addon(name: "Bacon", price: 1.99),
+      Addon(name: "Meat", price: 2.99),
+    ]),
+    Food(name: "Vegan Burger", description: "A vegan burger with fresh vegetables", imagePath: "lib/images/burgers/vegge_burger.jpg", price: 0.99, category: FoodCategory.burgers, availableAddons: [
+      Addon(name: "Extra cheese", price: 0.99),
+      Addon(name: "Salad", price: 1.99),
+      Addon(name: "Avocado", price: 2.99),
+    ]),
 
     //salads
-    Food(
-        name: "Greek Salad",
-        description: "A fresh greek salad",
-        imagePath: "lib/images/salads/greek_salad.jpg",
-        price: 0.99,
-        category: FoodCategory.salads,
-        availableAddons: [
-          Addon(name: "Mayonnaise", price: 0.99),
-          Addon(name: "Bread", price: 1.99),
-        ]),
-    Food(
-        name: "Caesar Salad",
-        description: "A classic caesar salad",
-        imagePath: "lib/images/salads/caesar_salad.jpg",
-        price: 0.99,
-        category: FoodCategory.salads,
-        availableAddons: [
-          Addon(name: "Mayonnaise", price: 0.99),
-          Addon(name: "Bread", price: 1.99),
-        ]),
-    Food(
-        name: "Quinoa Salad",
-        description: "A salad made of avocado, quinoa, and vegetables",
-        imagePath: "lib/images/salads/quinoa_salad.jpg",
-        price: 0.99,
-        category: FoodCategory.salads,
-        availableAddons: [
-          Addon(name: "Mayonnaise", price: 0.99),
-          Addon(name: "Bread", price: 1.99),
-        ]),
-    Food(
-        name: "Sesame Salad",
-        description: "An asian made sesame salad with chicken and vegetables",
-        imagePath: "lib/images/salads/asiansesame_salad.jpg",
-        price: 0.99,
-        category: FoodCategory.salads,
-        availableAddons: [
-          Addon(name: "Mayonnaise", price: 0.99),
-          Addon(name: "Bread", price: 1.99),
-        ]),
-    Food(
-        name: "SouthWest Salad",
-        description: "A salad made with fresh vegetables and chicken",
-        imagePath: "lib/images/salads/southwest_salad.jpg",
-        price: 0.99,
-        category: FoodCategory.salads,
-        availableAddons: [
-          Addon(name: "Mayonnaise", price: 0.99),
-          Addon(name: "Bread", price: 1.99),
-        ]),
+    Food(name: "Greek Salad", description: "A fresh greek salad", imagePath: "lib/images/salads/greek_salad.jpg", price: 0.99, category: FoodCategory.salads, availableAddons: [
+      Addon(name: "Mayonnaise", price: 0.99),
+      Addon(name: "Bread", price: 1.99),
+    ]),
+    Food(name: "Caesar Salad", description: "A classic caesar salad", imagePath: "lib/images/salads/caesar_salad.jpg", price: 0.99, category: FoodCategory.salads, availableAddons: [
+      Addon(name: "Mayonnaise", price: 0.99),
+      Addon(name: "Bread", price: 1.99),
+    ]),
+    Food(name: "Quinoa Salad", description: "A salad made of avocado, quinoa, and vegetables", imagePath: "lib/images/salads/quinoa_salad.jpg", price: 0.99, category: FoodCategory.salads, availableAddons: [
+      Addon(name: "Mayonnaise", price: 0.99),
+      Addon(name: "Bread", price: 1.99),
+    ]),
+    Food(name: "Sesame Salad", description: "An asian made sesame salad with chicken and vegetables", imagePath: "lib/images/salads/asiansesame_salad.jpg", price: 0.99, category: FoodCategory.salads, availableAddons: [
+      Addon(name: "Mayonnaise", price: 0.99),
+      Addon(name: "Bread", price: 1.99),
+    ]),
+    Food(name: "SouthWest Salad", description: "A salad made with fresh vegetables and chicken", imagePath: "lib/images/salads/southwest_salad.jpg", price: 0.99, category: FoodCategory.salads, availableAddons: [
+      Addon(name: "Mayonnaise", price: 0.99),
+      Addon(name: "Bread", price: 1.99),
+    ]),
 
     //sides
-    Food(
-        name: "French Fries",
-        description: "Crispy french fries",
-        imagePath: "lib/images/sides/loadedfries_side.jpg",
-        price: 0.99,
-        category: FoodCategory.sides,
-        availableAddons: [
-          Addon(name: "Mayonnaise", price: 0.99),
-        ]),
-    Food(
-        name: "Onion Rings",
-        description: "Crispy Onion Rings",
-        imagePath: "lib/images/sides/onion_rings_side.jpg",
-        price: 0.99,
-        category: FoodCategory.sides,
-        availableAddons: [
-          Addon(name: "Mayonnaise", price: 0.99),
-        ]),
-    Food(
-        name: "Sweet Potato Fries",
-        description: " Freshly made sweet potato fries",
-        imagePath: "lib/images/sides/sweet_potato_side.jpg",
-        price: 0.99,
-        category: FoodCategory.sides,
-        availableAddons: [
-          Addon(name: "Mayonnaise", price: 0.99),
-        ]),
-    Food(
-        name: "Garlic bread",
-        description: "Freshly made garlic bread",
-        imagePath: "lib/images/sides/garlic_bread_side.jpg",
-        price: 0.99,
-        category: FoodCategory.sides,
-        availableAddons: [
-          Addon(name: "Mayonnaise", price: 0.99),
-        ]),
-    Food(
-        name: "Mac and Cheese",
-        description: "A classic mac and cheese",
-        imagePath: "lib/images/sides/mac_side.jpg",
-        price: 0.99,
-        category: FoodCategory.sides,
-        availableAddons: [
-          Addon(name: "Mayonnaise", price: 0.99),
-        ]),
+    Food(name: "French Fries", description: "Crispy french fries", imagePath: "lib/images/sides/loadedfries_side.jpg", price: 0.99, category: FoodCategory.sides, availableAddons: [
+      Addon(name: "Mayonnaise", price: 0.99),
+    ]),
+    Food(name: "Onion Rings", description: "Crispy Onion Rings", imagePath: "lib/images/sides/onion_rings_side.jpg", price: 0.99, category: FoodCategory.sides, availableAddons: [
+      Addon(name: "Mayonnaise", price: 0.99),
+    ]),
+    Food(name: "Sweet Potato Fries", description: " Freshly made sweet potato fries", imagePath: "lib/images/sides/sweet_potato_side.jpg", price: 0.99, category: FoodCategory.sides, availableAddons: [
+      Addon(name: "Mayonnaise", price: 0.99),
+    ]),
+    Food(name: "Garlic bread", description: "Freshly made garlic bread", imagePath: "lib/images/sides/garlic_bread_side.jpg", price: 0.99, category: FoodCategory.sides, availableAddons: [
+      Addon(name: "Mayonnaise", price: 0.99),
+    ]),
+    Food(name: "Mac and Cheese", description: "A classic mac and cheese", imagePath: "lib/images/sides/mac_side.jpg", price: 0.99, category: FoodCategory.sides, availableAddons: [
+      Addon(name: "Mayonnaise", price: 0.99),
+    ]),
 
     //desserts
-    Food(
-        name: "Chocolate Cake",
-        description: "A delicious chocolate cake",
-        imagePath: "lib/images/desserts/chocolate_cake_dessert.jpg",
-        price: 0.99,
-        category: FoodCategory.desserts,
-        availableAddons: [
-          Addon(name: "Milkshake", price: 2.99),
-        ]),
-    Food(
-        name: "Cookies",
-        description: "A box of freshly baked cookies",
-        imagePath: "lib/images/desserts/cookies_dessert.jpg",
-        price: 0.99,
-        category: FoodCategory.desserts,
-        availableAddons: [
-          Addon(name: "Milkshake", price: 2.99),
-        ]),
-    Food(
-        name: "Cupcakes",
-        description: "A box of freshly baked cupcakes",
-        imagePath: "lib/images/desserts/cupcake_dessert.jpg",
-        price: 0.99,
-        category: FoodCategory.desserts,
-        availableAddons: [
-          Addon(name: "Milkshake", price: 2.99),
-        ]),
-    Food(
-        name: "Macarons",
-        description: "A box of freshly baked macarons",
-        imagePath: "lib/images/desserts/macarons_dessert.jpg",
-        price: 0.99,
-        category: FoodCategory.desserts,
-        availableAddons: [
-          Addon(name: "Milkshake", price: 2.99),
-        ]),
-    Food(
-        name: "Ice Cream",
-        description: "A box of freshly made ice cream",
-        imagePath: "lib/images/desserts/ice_cream_dessert.jpg",
-        price: 0.99,
-        category: FoodCategory.desserts,
-        availableAddons: [
-          Addon(name: "Milkshake", price: 2.99),
-        ]),
+    Food(name: "Chocolate Cake", description: "A delicious chocolate cake", imagePath: "lib/images/desserts/chocolate_cake_dessert.jpg", price: 0.99, category: FoodCategory.desserts, availableAddons: [
+      Addon(name: "Milkshake", price: 2.99),
+    ]),
+    Food(name: "Cookies", description: "A box of freshly baked cookies", imagePath: "lib/images/desserts/cookies_dessert.jpg", price: 0.99, category: FoodCategory.desserts, availableAddons: [
+      Addon(name: "Milkshake", price: 2.99),
+    ]),
+    Food(name: "Cupcakes", description: "A box of freshly baked cupcakes", imagePath: "lib/images/desserts/cupcake_dessert.jpg", price: 0.99, category: FoodCategory.desserts, availableAddons: [
+      Addon(name: "Milkshake", price: 2.99),
+    ]),
+    Food(name: "Macarons", description: "A box of freshly baked macarons", imagePath: "lib/images/desserts/macarons_dessert.jpg", price: 0.99, category: FoodCategory.desserts, availableAddons: [
+      Addon(name: "Milkshake", price: 2.99),
+    ]),
+    Food(name: "Ice Cream", description: "A box of freshly made ice cream", imagePath: "lib/images/desserts/ice_cream_dessert.jpg", price: 0.99, category: FoodCategory.desserts, availableAddons: [
+      Addon(name: "Milkshake", price: 2.99),
+    ]),
 
     //drinks
-    Food(
-        name: "Coca Cola",
-        description: "A refreshing coca cola",
-        imagePath: "lib/images/drinks/cocacola_drink.jpg",
-        price: 0.99,
-        category: FoodCategory.drinks,
-        availableAddons: [
-          Addon(name: "Lemon", price: 0.99),
-        ]),
-    Food(
-        name: "Schweppes",
-        description: "A refreshing schweppes",
-        imagePath: "lib/images/drinks/schweppes_drink.jpg",
-        price: 0.99,
-        category: FoodCategory.drinks,
-        availableAddons: [
-          Addon(name: "Lemon", price: 0.99),
-        ]),
-    Food(
-        name: "Fanta",
-        description: "A refreshing fanta",
-        imagePath: "lib/images/drinks/fanta_drinks.jpg",
-        price: 0.99,
-        category: FoodCategory.drinks,
-        availableAddons: [
-          Addon(name: "Lemon", price: 0.99),
-        ]),
-    Food(
-        name: "Sprite",
-        description: "A refreshing bottle of sprite",
-        imagePath: "lib/images/drinks/sprite_drink.jpg",
-        price: 0.99,
-        category: FoodCategory.drinks,
-        availableAddons: [
-          Addon(name: "Lemon", price: 0.99),
-        ]),
-    Food(
-        name: "Natural Drink",
-        description: "A refreshing natural drink",
-        imagePath: "lib/images/drinks/natural_drinks.jpg",
-        price: 0.99,
-        category: FoodCategory.drinks,
-        availableAddons: [
-          Addon(name: "Lemon", price: 0.99),
-        ]),
+    Food(name: "Coca Cola", description: "A refreshing coca cola", imagePath: "lib/images/drinks/cocacola_drink.jpg", price: 0.99, category: FoodCategory.drinks, availableAddons: [
+      Addon(name: "Lemon", price: 0.99),
+    ]),
+    Food(name: "Schweppes", description: "A refreshing schweppes", imagePath: "lib/images/drinks/schweppes_drink.jpg", price: 0.99, category: FoodCategory.drinks, availableAddons: [
+      Addon(name: "Lemon", price: 0.99),
+    ]),
+    Food(name: "Fanta", description: "A refreshing fanta", imagePath: "lib/images/drinks/fanta_drinks.jpg", price: 0.99, category: FoodCategory.drinks, availableAddons: [
+      Addon(name: "Lemon", price: 0.99),
+    ]),
+    Food(name: "Sprite", description: "A refreshing bottle of sprite", imagePath: "lib/images/drinks/sprite_drink.jpg", price: 0.99, category: FoodCategory.drinks, availableAddons: [
+      Addon(name: "Lemon", price: 0.99),
+    ]),
+    Food(name: "Natural Drink", description: "A refreshing natural drink", imagePath: "lib/images/drinks/natural_drinks.jpg", price: 0.99, category: FoodCategory.drinks, availableAddons: [
+      Addon(name: "Lemon", price: 0.99),
+    ]),
   ];
 
   /* GETTERS */
@@ -278,8 +128,7 @@ class Restaurant extends ChangeNotifier {
       bool isSameFood = item.food == food;
 
       //check if the list of selected addons are thesame
-      bool isSameAddons =
-          const ListEquality().equals(item.selectedAddons, selectedAddons);
+      bool isSameAddons = const ListEquality().equals(item.selectedAddons, selectedAddons);
 
       return isSameFood && isSameAddons;
     });

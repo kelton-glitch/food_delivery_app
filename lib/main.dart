@@ -5,19 +5,19 @@ import 'package:food_delivery_app/themes/theme_provider.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(
-    MultiProvider(providers: [
+  runApp(MultiProvider(
+    providers: [
       //theme provider
       ChangeNotifierProvider(
-      create: (context) => ThemeProvider(),
-    ),
+        create: (context) => ThemeProvider(),
+      ),
       //restaurant provider
       ChangeNotifierProvider(
-        create: (context) => Restaurant(),
-    ),],
-      child: const MyApp(),
-    )
-  );
+        create: (context) => RestaurantProvider(),
+      ),
+    ],
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: const LoginOrRegister(),
       theme: Provider.of<ThemeProvider>(context).themeData,

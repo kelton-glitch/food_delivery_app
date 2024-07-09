@@ -20,10 +20,11 @@ class _LoginPageState extends State<LoginPage> {
   // login method
   void login() {
     //fill out autentication here
-    
+
     Navigator.push(
-        context, MaterialPageRoute(
-          builder:(context) => const HomePage(),
+      context,
+      MaterialPageRoute(
+        builder: (context) => const HomePage(),
       ),
     );
   }
@@ -48,25 +49,17 @@ class _LoginPageState extends State<LoginPage> {
             // message, app slogan
             Text(
               "Food Delivery App",
-              style: TextStyle(
-                  fontSize: 16,
-                  color: Theme.of(context).colorScheme.inversePrimary),
+              style: TextStyle(fontSize: 16, color: Theme.of(context).colorScheme.inversePrimary),
             ),
 
             const SizedBox(height: 25),
 
             //email textfield
-            MyTextField(
-                controller: emailController,
-                hintText: "Email",
-                obscureText: false),
+            MyTextField(controller: emailController, hintText: "Email", obscureText: false),
 
             const SizedBox(height: 10),
             //password textfield
-            MyTextField(
-                controller: passwordController,
-                hintText: "Password",
-                obscureText: true),
+            MyTextField(controller: passwordController, hintText: "Password", obscureText: true),
 
             const SizedBox(height: 25),
             //sign in button
@@ -80,9 +73,7 @@ class _LoginPageState extends State<LoginPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Not a member?",
-                    style: TextStyle(
-                        color: Theme.of(context).colorScheme.inversePrimary)),
+                Text("Not a member?", style: TextStyle(color: Theme.of(context).colorScheme.inversePrimary)),
                 const SizedBox(width: 4),
                 GestureDetector(
                   onTap: widget.onTap,

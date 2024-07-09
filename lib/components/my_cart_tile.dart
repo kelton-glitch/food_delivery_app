@@ -10,11 +10,9 @@ class MyCartTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<Restaurant>(
+    return Consumer<RestaurantProvider>(
       builder: (context, restaurant, child) => Container(
-        decoration: BoxDecoration(
-            color: Theme.of(context).colorScheme.secondary,
-            borderRadius: BorderRadius.circular(8)),
+        decoration: BoxDecoration(color: Theme.of(context).colorScheme.secondary, borderRadius: BorderRadius.circular(8)),
         margin: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
         child: Column(
           children: [
@@ -43,7 +41,7 @@ class MyCartTile extends StatelessWidget {
                       Text(
                         '\$ ${cartItem.food.price}',
                         style: TextStyle(color: Theme.of(context).colorScheme.primary),
-                        )
+                      )
                     ],
                   ),
 
@@ -54,8 +52,7 @@ class MyCartTile extends StatelessWidget {
                     quantity: cartItem.quantity,
                     food: cartItem.food,
                     onIncrement: () {
-                      restaurant.addToCart(
-                          cartItem.food, cartItem.selectedAddons);
+                      restaurant.addToCart(cartItem.food, cartItem.selectedAddons);
                     },
                     onDecrement: () {
                       restaurant.removeFromCart(cartItem);
@@ -81,23 +78,17 @@ class MyCartTile extends StatelessWidget {
                             children: [
                               //addon name
                               Text(addon.name),
-                        
+
                               //addon price
                               Text(' (\$${addon.price})'),
                             ],
                           ),
                           shape: StadiumBorder(
-                            side: BorderSide(
-                              color: Theme.of(context).colorScheme.primary
-                            ),
+                            side: BorderSide(color: Theme.of(context).colorScheme.primary),
                           ),
                           onSelected: (value) {},
-                          backgroundColor:
-                              Theme.of(context).colorScheme.secondary,
-                          labelStyle: TextStyle(
-                              color: Theme.of(context).colorScheme.inversePrimary,
-                              fontSize: 12
-                            ),
+                          backgroundColor: Theme.of(context).colorScheme.secondary,
+                          labelStyle: TextStyle(color: Theme.of(context).colorScheme.inversePrimary, fontSize: 12),
                         ),
                       ),
                     )

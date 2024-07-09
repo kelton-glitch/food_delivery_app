@@ -17,15 +17,13 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage>
-    with SingleTickerProviderStateMixin {
+class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
   @override
   void initState() {
     super.initState();
-    _tabController =
-        TabController(length: FoodCategory.values.length, vsync: this);
+    _tabController = TabController(length: FoodCategory.values.length, vsync: this);
   }
 
   @override
@@ -92,7 +90,7 @@ class _HomePageState extends State<HomePage>
                   ),
                 )
               ],
-          body: Consumer<Restaurant>(
+          body: Consumer<RestaurantProvider>(
             builder: (context, restaurant, child) => TabBarView(
               controller: _tabController,
               children: getFoodInThisCategory(restaurant.menu),
