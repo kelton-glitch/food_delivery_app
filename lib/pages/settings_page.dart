@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:food_delivery_app/themes/theme_provider.dart';
+import 'package:food_delivery_app/shared/themes/theme_provider.dart';
 import 'package:provider/provider.dart';
 
 class SettingsPage extends StatelessWidget {
@@ -11,9 +11,9 @@ class SettingsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Settings"),
-        backgroundColor: Theme.of(context).colorScheme.background,
+        backgroundColor: Theme.of(context).colorScheme.surface,
         ),
-      backgroundColor:Theme.of(context).colorScheme.background,
+      backgroundColor:Theme.of(context).colorScheme.surface,
       body: Column(
         children: [
           Container(

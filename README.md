@@ -1,18 +1,19 @@
-# food_delivery_app
+# Food_delivery_app
 
-A new Flutter project.
+A Flutter application that helps manage food delivery from it's inception to cart, then payment.
+
+## Key Features
+
+- **Intuitive Dashboard**: The dashboard gives an easy to use system where items can easily be picked from the available items and ordered
+
+- **Seamless Transitions**: The wait time is meticulously worked on such that the user experience and application response is taken into account as user time is also prioritized
+
+- **Credit Card Payment**: A simple credit card implementation done and modelled using appropriate packages.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+## Credits
 
-A few resources to get you started if this is your first Flutter project:
+- The design and implementation used were primarily taken from [Mitch Koko](https://www.github.com/mitchkoko)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-
-// git remote set-url origin https://github.com/kelton-glitch/food_delivery_app
+- Adjustments and upgrades were done by [Elton Kamgo Njomo](https:/www.linkedin.com/in/eltonkamgo-njomo-89ba66210)
